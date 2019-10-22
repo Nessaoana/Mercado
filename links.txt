@@ -1,0 +1,7 @@
+Template da pag de compra: (tipo um finalizar compra)
+
+    https://mdbootstrap.com/snippets/jquery/mdbootstrap/102381?action=full_screen_mode
+
+Template da página Home:
+
+    https://colorlib.com/wp/template/onetech/
