@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nome":"KHAL DROGO - GAME OF THRONES - POP! - FUNKO",
+        "preco":89,
+        "parcela": "em até 8x de R$ 11,13",
+        "principal": "imagens/khal1.jpg",
+        "secundaria": "imagens/khal2.jpg"
+    },
+    {
+        "id": 2,
+        "nome":"VULTURE - SPIDER-MAN: HOMECOMING - POP! - FUNKO",
+        "preco":99,
+        "parcela": "em até 9x de R$ 11,00",
+        "principal": "imagens/vulture1.jpg",
+        "secundaria": "imagens/vulture2.jpg"
+    },
+    {
+        "id": 3,
+        "nome":"BRIENNE OF TARTH - GAME OF THRONES - POP! - FUNKO",
+        "preco":89,
+        "parcela": "em até 8x de R$ 11,13",
+        "principal": "imagens/brienne1.jpg",
+        "secundaria": "imagens/brienne2.jpg"
+    },
+    {
+        "id": 4,
+        "nome":"LIU KANG - MORTAL KOMBAT X - POP! GAMES - FUNKO",
+        "preco":94,
+        "parcela": "em até 9x de R$ 10,44",
+        "principal": "imagens/mk1.jpg",
+        "secundaria": "imagens/mk2.jpg"
+    },
+    {
+        "id": 5,
+        "nome":"FUNKO POP! DAVID LEVINSON - INDEPENDENCE DAY: RESURGENCE",
+        "preco":69,
+        "parcela": "em até 6x de R$ 11,50",
+        "principal": "imagens/id1.jpg",
+        "secundaria": "imagens/id2.jpg"
+    },
+    {
+        "id": 6,
+        "nome":"KEN - STREET FIGHTER - POP! GAMES - FUNKO",
+        "preco":74,
+        "parcela": "em até 7x de R$ 10,57",
+        "principal": "imagens/sf1.jpg",
+        "secundaria": "imagens/sf2.jpg"
+    }    
+]
