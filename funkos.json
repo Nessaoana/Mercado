@@ -33,7 +33,7 @@
     },
     {
         "id": 5,
-        "nome":"DAVID LEVINSON -<br> INDEPENDENCE DAY: RESURGENCE",
+        "nome":"DAVID LEVINSON -<br> INDEPENDENCE DAY",
         "preco":69,
         "parcela": "em até 6x de R$ 11,50",
         "principal": "imagens/id1.jpg",
@@ -49,7 +49,7 @@
     },
     {
         "id": 7,
-        "nome":"BLACK MANTA -<br> DC COMICS SUPER HEROES",
+        "nome":"BLACK MANTA -<br> DC COMICS",
         "preco":69,
         "parcela": "em até 6x de R$ 11,50",
         "principal": "imagens/bm1.jpg",
@@ -57,7 +57,7 @@
     },
     {
         "id": 8,
-        "nome":"POWER GIRL -<br> DC COMICS SUPER HEROES",
+        "nome":"POWER GIRL -<br> DC COMICS",
         "preco":79,
         "parcela": "em até 7x de R$ 11,29",
         "principal": "imagens/pg1.jpg",
@@ -65,7 +65,7 @@
     },
     {
         "id": 9,
-        "nome":"FIRESTORM -<br> DC COMICS SUPER HEROES",
+        "nome":"FIRESTORM -<br> DC COMICS",
         "preco":69,
         "parcela": "em até 6x de R$ 11,50",
         "principal": "imagens/fs1.jpg",
@@ -97,7 +97,7 @@
     },
     {
         "id": 13,
-        "nome":"KYLO REN (UNMASKED) -<br>STAR WARS: THE FORCE AWAKENS",
+        "nome":"KYLO REN (UNMASKED) -<br>STAR WARS",
         "preco":89,
         "parcela": "em até 8x de R$ 11,13",
         "principal": "imagens/kr1.jpg",
@@ -153,7 +153,7 @@
     },
     {
         "id": 20,
-        "nome":"SCARLET WITCH -<br>CAPTAIN AMERICA: CIVIL WAR",
+        "nome":"SCARLET WITCH -<br>CAPTAIN AMERICA",
         "preco":99,
         "parcela": "em até 9x de R$ 11,00",
         "principal": "imagens/sw1.jpg",
@@ -161,7 +161,7 @@
     },
     {
         "id": 21,
-        "nome":"BLACK WIDOW-<br>CAPTAIN AMERICA: CIVIL WAR",
+        "nome":"BLACK WIDOW-<br>CAPTAIN AMERICA",
         "preco":99,
         "parcela": "em até 9x de R$ 11,00",
         "principal": "imagens/bw1.jpg",
