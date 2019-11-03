@@ -19,6 +19,7 @@
     $(document).ready(function () {
       $.getJSON('funkos.json', function (data) {
         var item;
+        
         //Adicionando na página
           $.each(data, function (i, produto) {
             item = "<div class='col-sm-4'><div class='text-center'><img src='" +
@@ -68,7 +69,6 @@
 <body>
   <div id="head"></div>
 
-  <div id="add"> Clica aq</div>
   <div class="container">
 
     <!-- Slider    -->
