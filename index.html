@@ -13,16 +13,20 @@
       $.getJSON('funkos.json', function (data) {
         var item;
         $.each(data, function (i, produto) {
-          item = "<div class='col-sm-4'><div class='text-center'><img src='" + produto.principal + "'/><h4>" + produto.nome + "</h4><h4>R$ " + produto.preco.toFixed(2) + "<br><button value='" + produto.id + "' class='btn btn-default' id='add' >Adicionar ao carrinho</button></div></div>";
+          item = "<div class='col-sm-4'><div class='text-center'><img src='" +
+           produto.principal + "'/><h4>" + produto.nome + "</h4><h4>R$ " + 
+           produto.preco.toFixed(2) + "<br></h4><a value='" + produto.id 
+           + "' class='btn btn-default' id='add' >Adicionar ao carrinho</a></div></div>";
           $("#funkos").append(item);
         });
       });
     });
 
 
-    $("#add").click(function () {
-      alert("eu sou um alerta");
-
+    $(document).ready(function() {
+      $("a").click(function() {
+        alert ("Teste de utilização do jQuery, primeiro exemplo.");
+      });
     });
 
     $(document).ready(function () {
@@ -59,7 +63,7 @@
   </style>
 
 
-
+</head>
 
 <body>
   <div id="head"></div>
