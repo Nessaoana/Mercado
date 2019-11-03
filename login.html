@@ -9,8 +9,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script>
-    $(function () {
+
+$(function () {
+
       $("#head").load("header.html");
+      $("#footer").load("footer.html");
+      $("#lateral").load("lateral.html");
     });
   </script>
 
@@ -19,9 +23,13 @@
 <body>
   <div id="head"></div>
   <div class="container">
-    <h3>Basic Navbar Example</h3>
-    <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
-  </div>
+      <div class="row">
+        <div class="col-sm-9 pull-right" id="funkos"></div>
+        <div class="col-sm-3 pull-left" id="lateral"></div>
+      </div>    
+    </div>
+  
+    <div id="footer"></div>
 
 </body>
 
