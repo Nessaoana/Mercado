@@ -23,13 +23,14 @@
           item = "<div class='col-sm-4'><div class='text-center'><img src='" +
            produto.principal + "'/><h4>" + produto.nome + "</h4><h4>R$ " + 
            produto.preco.toFixed(2) + "<br></h4><a value='" + produto.id 
-           + "' class='btn btn-default' id='add' >Adicionar ao carrinho</a></div></div>";
+           + "' class='btn btn-default func'>Adicionar ao carrinho</a></div></div>";
           $("#funkos").append(item);
         });
+        $(".func").click(function() {
+        alert ("Teste de utilização do jQuery, primeiro exemplo.");
       });
-    });
+      });
 
-    $(document).ready(function () {
       $.getJSON('funkos.json', function (data) {
         var item;
         $.each(data, function (i, produto) {
@@ -48,13 +49,6 @@
         });
       });
     });
-
-    $(document).ready(function() {
-      $("#add").click(function() {
-        alert ("Teste de utilização do jQuery, primeiro exemplo.");
-      });
-    });
-
 
 
 
