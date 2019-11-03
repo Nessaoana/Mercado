@@ -15,45 +15,45 @@
       $("#footer").load("footer.html");
       $("#lateral").load("lateral.html");
     });
-
+    
     $(document).ready(function () {
       $.getJSON('funkos.json', function (data) {
         var item;
-        $.each(data, function (i, produto) {
-          item = "<div class='col-sm-4'><div class='text-center'><img src='" +
-           produto.principal + "'/><h4>" + produto.nome + "</h4><h4>R$ " + 
-           produto.preco.toFixed(2) + "<br></h4><a value='" + produto.id 
-           + "' class='btn btn-default func'>Adicionar ao carrinho</a></div></div>";
-          $("#funkos").append(item);
-        });
-        $(".func").click(function() {
-        alert ("Teste de utilização do jQuery, primeiro exemplo.");
-      });
+        //Adicionando na página
+          $.each(data, function (i, produto) {
+            item = "<div class='col-sm-4'><div class='text-center'><img src='" +
+            produto.principal + "'/><h4><a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a></h4><h4>R$ " + 
+            produto.preco.toFixed(2) + "<br></h4><a value='" + produto.id 
+            + "' class='btn btn-default func'>Adicionar ao carrinho</a></div></div>";
+            $("#funkos").append(item);
+          });
+        //
+        
+        //Adicionando no carrinho
+          $(".func").click(function() {
+            alert ("Teste de utilização do jQuery, primeiro exemplo.");
+          });
+        //
       });
 
-      $.getJSON('funkos.json', function (data) {
-        var item;
-        $.each(data, function (i, produto) {
-          if (i < 3) {
+      //Inserindo os dados no Slider:
+        $.getJSON('funkos.json', function (data) {
+          var item;
+          $.each(data, function (i, produto) {
+            if (i < 3) {
+              if (i == 0) {
+                item = "<div class='item active'>";
+              } else {
+                item = "<div class='item'>";
+              }
+              item += "<div class='col-sm-6'> <h2> <a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a> </h2> <h3> R$ " + produto.preco.toFixed(2) + " </h3> </div>";
+              item += "<div class='col-sm-6'> <img src='" + produto.principal + "'> </div></div>";
 
-            if (i == 0) {
-              item = "<div class='item active'>";
-            } else {
-              item = "<div class='item'>";
+              $("#item").append(item);
             }
-            item += "<div class='col-sm-6'> <h2> <a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a> </h2> <h3> R$ " + produto.preco.toFixed(2) + " </h3> </div>";
-            item += "<div class='col-sm-6'> <img src='" + produto.principal + "'> </div></div>";
-
-            $("#item").append(item);
-          }
+          });
         });
-      });
-    });
-
-    $(function () {
-      $("#head").load("header.html");
-      $("#footer").load("footer.html");
-      $("#lateral").load("lateral.html");
+      //
     });
 
   </script>
@@ -62,8 +62,6 @@
       width: 60%;
     }
   </style>
-
-
 </head>
 
 
