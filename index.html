@@ -26,9 +26,10 @@
            + "' class='btn btn-default func'>Adicionar ao carrinho</a></div></div>";
           $("#funkos").append(item);
         });
-        $(".func").click(function() {
-        alert ("Teste de utilização do jQuery, primeiro exemplo.");
-      });
+        $(".func").click(function(evt) {
+          alert ("Teste de utilização do jQuery, primeiro exemplo.");
+          JSON.stringfy(evt.id);
+        });
       });
 
       $.getJSON('funkos.json', function (data) {
