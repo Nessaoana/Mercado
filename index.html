@@ -8,7 +8,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+
+  <script>
+    $(function () {
+      $("#head").load("header.html");
+      $("#footer").load("footer.html");
+      $("#lateral").load("lateral.html");
+    });
+
     $(document).ready(function () {
       $.getJSON('funkos.json', function (data) {
         var item;
@@ -56,7 +63,6 @@
     });
   </script>
 
-
   <style>
     img {
       width: 60%;
@@ -66,21 +72,10 @@
 
 </head>
 
-
-<style>
-img{
-width: 60%;
-
-}
-</style>
-
-</head>
-
 <body>
   <div id="head"></div>
 
   <div class="container">
-
 
     <!-- Slider    -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -103,10 +98,15 @@ width: 60%;
         <span class="glyphicon glyphicon-chevron-right"></span>
         <span class="sr-only">Next</span>
       </a>
+      <br>
     </div>
+  </div>  
 
-    <br>
-    <div id="funkos"> </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 pull-right" id="funkos"></div>
+      <div class="col-sm-3 pull-left" id="lateral"></div>
+    </div>    
   </div>
 
   <div id="footer"></div>
