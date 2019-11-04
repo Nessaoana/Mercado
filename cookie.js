@@ -41,4 +41,16 @@ function deletar(i, itens = []) {
     console.log("itens ", itens);
     return itens;
     
-  }
+}
+
+// utilize a opção 1 quando for enviar os dados que vc pefgou pelo getCookie
+function adicionar(id, itens, op) {
+    console.log(itens);
+    console.log(id);
+    if(op==1){
+        itens += id;
+    }else{
+        itens += id+",";
+    }    
+    return itens;
+}
