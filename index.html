@@ -8,41 +8,54 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="cookie.js"></script>
 
   <script>
+    var carrinho = [];
+
     $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");
       $("#lateral").load("lateral.html");
     });
-    
+
     $(document).ready(function () {
       $.getJSON('funkos.json', function (data) {
         var item;
 
         //Adicionando na página
-          $.each(data, function (i, produto) {
-            item = "<div class='col-sm-4'><div class='text-center'><img src='" +
-            produto.principal + "'/><h4><a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a></h4><h4>R$ " + 
-            produto.preco.toFixed(2) + "<br></h4><a id='" + produto.id 
+        $.each(data, function (i, produto) {
+          item = "<div class='col-sm-4'><div class='text-center'><img src='" +
+            produto.principal + "'/><h4><a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a></h4><h4>R$ " +
+            produto.preco.toFixed(2) + "<br></h4><a id='" + produto.id
             + "' class='btn btn-default func'>Adicionar ao carrinho</a></div></div>";
-            $("#funkos").append(item);
-          });
+          $("#funkos").append(item);
+        });
         //
-        
+
         //Adicionando no carrinho
 
-          $(".func").click(function() {
-            var id = this.getAttribute("id");
 
-            console.log(JSON.stringify(id));
-            alert ("Teste de utilização do jQuery, primeiro exemplo." + id);
+        //pegando os dados enviados da página carrinho para não ter perda
 
-          });
-        //
-      });
+        var car2 = getCookie("carrinho2");
+        if (car2 != null) {
 
-      //Inserindo os dados no Slider:
+          carrinho.push(car2);
+        }
+        console.log(carrinho)
+        $(".func").click(function () {
+          var id = this.getAttribute("id");
+          // add o produto q foi clicado
+          carrinho.push(id);
+
+          // envia o cookie com os produtos adicionados
+          setCookie("carrinho", carrinho, carrinho.length);
+
+        });
+
+
+        //Inserindo os dados no Slider:
         $.getJSON('funkos.json', function (data) {
           var item;
           $.each(data, function (i, produto) {
@@ -59,8 +72,6 @@
             }
           });
         });
-      //
-    });
 
   </script>
   <style>
@@ -73,6 +84,7 @@
       width: 100%;
     }
   </style>
+
 </head>
 
 
@@ -104,13 +116,13 @@
       </a>
       <br>
     </div>
-  </div>  
+  </div>
 
   <div class="container">
     <div class="row">
       <div class="col-sm-9 pull-right" id="funkos"></div>
       <div class="col-sm-3 pull-left" id="lateral"></div>
-    </div>    
+    </div>
   </div>
 
   <div id="footer"></div>
