@@ -41,24 +41,16 @@
         var car2 = getCookie("carrinho2");
         console.log("car2 ", car2);
         if (car2 != null) {
-          carrinho += car2;
+          carrinho= adicionar(car2, carrinho, 1);
         }
-
-        console.log(carrinho);
-
         $(".func").click(function () {
           var id = this.getAttribute("id");
           // add o produto q foi clicado
-          if(carrinho!=null){
-            carrinho += id+",";
-          }else{
-            carrinho += id+",";
-          }
-          
+          carrinho = adicionar(id, carrinho, 2);
+
           console.log(carrinho);
           // envia o cookie com os produtos adicionados
           setCookie("carrinho", carrinho);
-
         });
       });
 
