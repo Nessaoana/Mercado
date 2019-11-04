@@ -36,25 +36,12 @@
     cookie = getCookie("carrinho");
     console.log("1... ", cookie);
     var itensCarrinho = [];
-    itensCarrinho = cookie.split(";");
-    console.log(itensCarrinho);
-
-    function deletar (i){
-      var x;
-      var d; // recebe o indice q vai deletar 
-      for(x==0; x<=itensCarrinho.length; x++){
-        console.log(itensCarrinho[x]);
-        if(itensCarrinho[x] == i){ // compara o valor q quer ser deletado e guarda o indice dele
-          d = x;
-          console.log(x);
-        }
-      }
-      console.log(d);
-      itensCarrinho.splice(d,1);
+    
+    // dando split para trabalhar com array de id
+    if(cookie!=null){
+      itensCarrinho = cookie.split(",");
     }
 
-    //deletar("3");
-    itensCarrinho.splice(1,1);
     console.log(itensCarrinho);
 
     // Para colocar o numero no carrinho
