@@ -55,25 +55,23 @@
         });
 
 
-      //Inserindo os dados no Slider:
-      $.getJSON('funkos.json', function (data) {
-        var item;
-        $.each(data, function (i, produto) {
-          if (i < 3) {
-            if (i == 0) {
-              item = "<div class='item active'>";
-            } else {
-              item = "<div class='item'>";
-            }
-            item += "<div class='col-sm-6'> <h2> <a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a> </h2> <h3> R$ " + produto.preco.toFixed(2) + " </h3> </div>";
-            item += "<div class='col-sm-6'> <img src='" + produto.principal + "'> </div></div>";
+        //Inserindo os dados no Slider:
+        $.getJSON('funkos.json', function (data) {
+          var item;
+          $.each(data, function (i, produto) {
+            if (i < 3) {
+              if (i == 0) {
+                item = "<div class='item active'>";
+              } else {
+                item = "<div class='item'>";
+              }
+              item += "<div class='col-sm-6'> <h2> <a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a> </h2> <h3> R$ " + produto.preco.toFixed(2) + " </h3> </div>";
+              item += "<div class='col-sm-6'> <img src='" + produto.principal + "'> </div></div>";
 
-            $("#item").append(item);
-          }
+              $("#item").append(item);
+            }
+          });
         });
-      });
-      //
-    });
 
   </script>
   <style>
