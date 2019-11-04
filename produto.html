@@ -14,10 +14,12 @@
       $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");
+      $("#lateral").load("lateral.html");
     });
 
-    produto = getCookie("produto");
-    console.log(produto);
+    // tem o id pra vc ler o json 
+    var produtoId = getCookie("produto");
+    console.log("produtoId: ", produtoId);
 
   </script>
   <style>
@@ -41,10 +43,10 @@
         </div>           
     </div>
 
-    <div class="container">
-      <div class="row">
-      </div> 
-    </div>
+    <div class="row">
+        <div class="col-sm-9 pull-right" id="funkos"></div>
+        <div class="col-sm-9 pull-right" id="lateral"></div>
+    </div>  
     
 
       <div id="footer"></div>
