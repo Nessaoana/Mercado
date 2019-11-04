@@ -19,7 +19,7 @@
     $(document).ready(function () {
       $.getJSON('funkos.json', function (data) {
         var item;
-        
+
         //Adicionando na página
           $.each(data, function (i, produto) {
             item = "<div class='col-sm-4'><div class='text-center'><img src='" +
@@ -31,8 +31,9 @@
         //
         
         //Adicionando no carrinho
-          $(".func").click(function() {
-            alert ("Teste de utilização do jQuery, primeiro exemplo.");
+          $(".func").click(function() {           
+            var id = this.getAttribute("id");
+            alert(id);
           });
         //
       });
