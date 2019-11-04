@@ -8,32 +8,80 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="cookie.js"></script>
+
 
   <script>
-      $(function () {
+
+    // pegando a informação que foi enviada, fica guardada na variavel cookie
+    var cookie1 = [];
+    var cookie = [];
+
+    var i;
+    cookie1.push( getCookie("carrinho"));
+    console.log("1... ", cookie1);
+
+
+    var tamanho =getCookie("tamanho");
+
+    console.log(cookie1);
+    console.log(tamanho);
+    
+    
+    // Para colocar o numero no carrinho
+    // pegar o tamanho do cookie e colocar lá do lado kkkkk
+
+    // o que fazer?
+    // Temos que fazer um for p/ a variavel cookie, pegar o numero (é o id uqe está no JSON) e ler
+    // o JSON de acordo com numeroCookie == json.id
+    // Quando pegar o objeto, mostrar as outras informações dele
+    // (nome, preço)
+
+
+
+    // INTERESSANTE 
+    // 1
+    // se tiver um número repetido no array cookie, podemos add como quantidade
+    // por exemplo, 4 aparece 3 vezes, na hora de mostrar colocamos quantidade "3"
+    // 2
+    // se fizermos o item 1, podemos colocar os atributos "preco unitario" e
+    // "preco total" que é o preco do jsonXquantidade
+
+
+    // Para excluir:
+    // Colocar um botão "x" no item do carrinho que tem o atributo id 
+    // excluir de cookie de acordo com o id (fazer uma função...)
+    
+
+
+
+    // Depois que faz todos os comentários acima envia novamente as informações para a index
+    setCookie("carrinho2", cookie1 );
+    setCookie("tamanho2", cookie.length );
+    $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");
       $("#lateral").load("lateral.html");
     });
-    </script>
+  </script>
 </head>
 
 <body>
   <div id="head"></div>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-9 pull-right" id="funkos"></div>
-          <div class="col-sm-3 pull-left" id="lateral"></div>
-        </div>    
-      </div>
-    
-      <div id="footer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 pull-right" id="funkos"></div>
+      <div class="col-sm-3 pull-left" id="lateral"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
 
   <div class="container">
-      <div class="row">
-        <div class="col-sm-9 pull-right" id="funkos"></div>
-        <div class="col-sm-3 pull-left" id="lateral"></div>
-      </div>    
+    <div class="row">
+      <div class="col-sm-9 pull-right" id="funkos"></div>
+      <div class="col-sm-3 pull-left" id="lateral"></div>
+    </div>
   </div>
 
   <div id="footer"></div>
