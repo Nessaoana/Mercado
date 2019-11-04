@@ -20,9 +20,8 @@
       }else{
         document.getElementById(id).value = value;
       }
-      document.getElementById("sub"+id).textContent = 'R$ '+ (document.getElementById(id).value*document.getElementById("preco"+id).textContent).toFixed(2);
-    }    
-    
+    }
+
     $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");
@@ -44,6 +43,11 @@
 
     console.log(itensCarrinho);
 
+    // chamar essa função no botao
+    function deletarItem(id){
+      itensCarrinho = deletar(id, itensCarrinho);
+    }
+
     // Para colocar o numero no carrinho
     // pegar o tamanho do cookie e colocar lá do lado kkkkk
     // o que fazer?    
@@ -53,21 +57,19 @@
         // o JSON de acordo com numeroCookie == json.id
         $.each(itensCarrinho, function (i, item) {
           // Quando pegar o objeto, mostrar as outras informações dele
-          if(item.indexOf(produto.id)!=-1){
-            var aux = "<tr><td style='width: 20%'><img src='" +produto.principal + "'/></td><td>"+produto.nome+"</td><td id='preco"+produto.id+"'>"+produto.preco.toFixed(2)+"</td>";
+          if(item==produto.id){
+            var aux = "<tr><td style='width: 20%'><img src='" +produto.principal + "'/></td><td>"+produto.nome+"</td><td>R$"+produto.preco.toFixed(2)+"</td>";
             //Quantidade
             aux += "<td><div class='cart_quantity_button'>";
             aux +=		"<input type='button' id='plus' value='+' onclick='process(1,"+produto.id+")'' />";
             aux +=    "<input id='"+produto.id+"' name='quant' class='text' size='1' type='text' value='1' maxlength='5'/>";
             aux +=    "<input type='button' id='minus' value='-' onclick='process(-1,"+produto.id+")'>";
-            aux +=    "</div></td>";
+            aux +=    "</div>";
             //Total
-            aux += "<td id='sub"+produto.id+"'>R$ "+produto.preco.toFixed(2)+"</td>";          
-            //Excluir
-            aux += "<td><input type='button' id='ex' value='Excluir' onclick='deletar("+produto.id+")''/></td></tr>"; 
+            //</td><td>Total</td><td></td></td>"
+            
+            $("#tabela").append(aux);
           }
-
-          $("#tabela").append(aux);
         });
       });
     });
@@ -88,15 +90,13 @@
     // Para excluir:
     // Colocar um botão "x" no item do carrinho que tem o atributo id 
     // excluir de cookie de acordo com o id (fazer uma função...)
+    // sintaxe para deletar
     
 
 
 
     // Depois que faz todos os comentários acima envia novamente as informações para a index
-    if(cookie == null){
-      cookie ="";
-    }
-    setCookie("carrinho2", cookie );
+    setCookie("carrinho2", itensCarrinho);
 
     $(function () {
       $("#head").load("header.html");
@@ -108,6 +108,7 @@
   <style>
   #footer {
     position: absolute;
+    bottom: 0%;
     width: 100%;
   }
   img{
@@ -137,7 +138,7 @@
                 <th>Nome</th>
                 <th>Preço Unitário</th>
                 <th>Quantidade</th>
-                <th>Subtotal</th>
+                <th>Total</th>
                 <th></th>
               </tr>
 					</thead>					
