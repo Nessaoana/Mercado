@@ -24,7 +24,7 @@
           $.each(data, function (i, produto) {
             item = "<div class='col-sm-4'><div class='text-center'><img src='" +
             produto.principal + "'/><h4><a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a></h4><h4>R$ " + 
-            produto.preco.toFixed(2) + "<br></h4><a value='" + produto.id 
+            produto.preco.toFixed(2) + "<br></h4><a id='" + produto.id 
             + "' class='btn btn-default func'>Adicionar ao carrinho</a></div></div>";
             $("#funkos").append(item);
           });
@@ -32,7 +32,10 @@
         
         //Adicionando no carrinho
           $(".func").click(function() {
-            alert ("Teste de utilização do jQuery, primeiro exemplo.");
+            var id = this.getAttribute("id");
+
+            console.log(JSON.stringify(id));
+            alert ("Teste de utilização do jQuery, primeiro exemplo." + id);
           });
         //
       });
