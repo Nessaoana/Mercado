@@ -4,6 +4,10 @@ function setCookie(name, value, tamanho) {
     document.cookie = cookie;
     document.cookie = tamanho;
 }
+function setCookie(name, id) { //Para o produto
+    var cookie = name + "=" + escape(id);
+    document.cookie = cookie;
+}
 // Função para pegar o cookie de carrinho enviado
 function getCookie(name) {
     var cookies = document.cookie;

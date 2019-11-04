@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="cookie.js"></script>
 
   <script>
       $(function () {
@@ -15,27 +16,17 @@
       $("#footer").load("footer.html");
     });
 
-    $.getJSON('funkos.json', function (data) {
-          var item;
-          $.each(data, function (i, produto) {
-            if (i < 3) {
-              if (i == 0) {
-                item = "<div class='item active'>";
-              } else {
-                item = "<div class='item'>";
-              }
-              item += "<div class='col-sm-6'> <h2> <a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a> </h2> <h3> R$ " + produto.preco.toFixed(2) + " </h3> </div>";
-              item += "<div class='col-sm-6'> <img src='" + produto.principal + "'> </div></div>";
+    produto = getCookie("produto");
+    console.log(produto);
 
-              $("#item").append(item);
-            }
-          });
-        });
   </script>
   <style>
     #footer {
       position: static;
       bottom:0;
+    }
+    img{
+      width: 30%;
     }
   </style>
 
@@ -43,16 +34,17 @@
     <div id="head"></div>
     <div class="container">
         <div class="breadcrumbs">
-            <ol class="breadcrumb">
-              <li><a href="index.html">Home</a></li>
-              <li class="active">Carrinho</li>
-            </ol>
-          </div>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active" id="produto"></li>
+          </ol>
+        </div>           
+    </div>
 
-        <div class="row">
-          
-        </div>    
-      </div>
+    <div class="container">
+      <div class="row">
+      </div> 
+    </div>
     
 
       <div id="footer"></div>

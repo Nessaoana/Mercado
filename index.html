@@ -66,6 +66,7 @@
               }
               item += "<div class='col-sm-6'> <h2> <a href='produto.html?id=" + produto.id + "' > " + produto.nome + "</a> </h2> <h3> R$ " + produto.preco.toFixed(2) + " </h3> </div>";
               item += "<div class='col-sm-6'> <img src='" + produto.principal + "'> </div></div>";
+              setCookie("produto", produto.id);
 
               $("#item").append(item);
             }
