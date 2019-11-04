@@ -1,6 +1,6 @@
 function setCookie(name, value, tamanho) {
     var cookie = name + "=" + escape(value);
-    var tamanho = "tamanho="+ escape(tamanho);
+    var tamanho = tamanho+ "=" + escape(tamanho);
     document.cookie = cookie;
     document.cookie = tamanho;
 }
