@@ -8,45 +8,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+  <script src="cookie.js"></script>
   <script>
 
     $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");
       $("#lateral").load("lateral.html");
-    });    
+    });
 
     // pegando a informação que foi enviada, fica guardada na variavel cookie
-    var cookie = [];
+    var cookie;
 
     var i;
     cookie = getCookie("carrinho");
     console.log("1... ", cookie);
     var itensCarrinho = [];
-    itensCarrinho = cookie.split(";");
-    console.log(itensCarrinho);
 
-    function deletar (i){
-      var x;
-      var d; // recebe o indice q vai deletar 
-      for(x==0; x<=itensCarrinho.length; x++){
-        console.log(itensCarrinho[x]);
-        if(itensCarrinho[x] == i){ // compara o valor q quer ser deletado e guarda o indice dele
-          d = x;
-          console.log(x);
-        }
-      }
-      console.log(d);
-      itensCarrinho.splice(d,1);
+    // dando split para trabalhar com array de id
+    if(cookie!=null){
+      itensCarrinho = cookie.split(",");
     }
 
-    //deletar("3");
-    itensCarrinho.splice(1,1);
-    console.log(itensCarrinho);
 
     // Para colocar o numero no carrinho
-    // pegar o tamanho do cookie e colocar lá do lado kkkkk
+    // pegar o tamanho do (itensCarrinho-1)  e colocar lá do lado kkkkk
+
+
+
 
     // o que fazer?
     // Temos que fazer um for p/ a variavel cookie, pegar o numero (é o id uqe está no JSON) e ler
@@ -67,16 +56,15 @@
 
     // Para excluir:
     // Colocar um botão "x" no item do carrinho que tem o atributo id 
-    // excluir de cookie de acordo com o id (fazer uma função...)
-    
+    // excluir de itensCarrinho de acordo com o id
 
+    // Para usar a função DELETAR é só passar o indice que quer ser excluido (no caso, o id do produto)
+    // e o arrayList itensCarrinho, ela irá retornar um array então deve ser atribuido a uma variavel..
+    // itensCarrinho = deletar("1", itensCarrinho);
 
 
     // Depois que faz todos os comentários acima envia novamente as informações para a index
-    if(cookie == null){
-      cookie ="";
-    }
-    setCookie("carrinho2", cookie );
+    setCookie("carrinho2", itensCarrinho);
 
     $(function () {
       $("#head").load("header.html");
@@ -86,44 +74,43 @@
   </script>
 
   <style>
-  #footer {
-    position: absolute;
-    bottom: 0%;
-    width: 100%;
-  }
+    #footer {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+    }
   </style>
 </head>
 
 <body>
   <div id="head"></div>
-    
+
   <section id="cart_items">
-		<div class="container">
-      
-			<div class="breadcrumbs">
-				<ol class="breadcrumb">
-				  <li><a href="index.html">Home</a></li>
-				  <li class="active">Carrinho</li>
-				</ol>
+    <div class="container">
+
+      <div class="breadcrumbs">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">Carrinho</li>
+        </ol>
       </div>
-      
-			<div class="table-responsive cart_info">
-				<table class="table table-condensed">
-					<thead>
-              <tr>
-                <th>Item</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Total</th>
-              </tr>
-						</tr>
-					</thead>					
-				</table>
-			</div>
-		</div>
-	</section>
-  
+
+      <div class="table-responsive cart_info">
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <div id="footer"></div>
 
 </body>
