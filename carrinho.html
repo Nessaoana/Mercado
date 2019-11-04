@@ -14,19 +14,11 @@
   <script>
 
     // pegando a informação que foi enviada, fica guardada na variavel cookie
-    var cookie1 = [];
     var cookie = [];
 
     var i;
-    cookie1.push( getCookie("carrinho"));
-    console.log("1... ", cookie1);
-
-
-    var tamanho =getCookie("tamanho");
-
-    console.log(cookie1);
-    console.log(tamanho);
-    
+    cookie = getCookie("carrinho");
+    console.log("1... ", cookie);
     
     // Para colocar o numero no carrinho
     // pegar o tamanho do cookie e colocar lá do lado kkkkk
@@ -56,8 +48,15 @@
 
 
     // Depois que faz todos os comentários acima envia novamente as informações para a index
-    setCookie("carrinho2", cookie1 );
-    setCookie("tamanho2", cookie.length );
+    if(cookie == null){
+      cookie ="";
+    }
+    setCookie("carrinho2", cookie );
+    
+    var itensCarrinho = [];
+    itensCarrinho = cookie.split(";");
+
+    console.log(itensCarrinho);
     $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");
