@@ -1,9 +1,8 @@
-function setCookie(name, value, tamanho) {
+function setCookie(name, value) {
     var cookie = name + "=" + escape(value);
-    var tamanho = tamanho+ "=" + escape(tamanho);
     document.cookie = cookie;
-    document.cookie = tamanho;
 }
+
 function setCookie(name, id) { //Para o produto
     var cookie = name + "=" + escape(id);
     document.cookie = cookie;
