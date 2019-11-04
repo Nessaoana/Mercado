@@ -34,6 +34,21 @@
           $("#funkos").append(item);
         }
       });
+      var carrinho = [];
+      var car2 = getCookie("carrinho2");
+        console.log("car2 ", car2);
+        if (car2 != null) {
+          carrinho= adicionar(car2, carrinho, 1);
+        }
+      $(".func").click(function () {
+          var id = this.getAttribute("id");
+          // add o produto q foi clicado
+          carrinho = adicionar(id, carrinho, 2);
+
+          console.log(carrinho);
+          // envia o cookie com os produtos adicionados
+          setCookie("carrinho", carrinho);
+        });
       });
 
   </script>
