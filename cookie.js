@@ -33,6 +33,7 @@ function deletar(i, itens = []) {
     
     for( x=0;x<itensCarrinho.length; x++){
       d = itens.indexOf(i);
+      console.log("index ", d);
       if(d!= -1){
         itens.splice(d, 1); 
       }      
