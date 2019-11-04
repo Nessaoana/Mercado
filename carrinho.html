@@ -64,7 +64,7 @@
             //Total
             aux += "<td id='sub"+produto.id+"'>R$ "+produto.preco.toFixed(2)+"</td>";          
             //Excluir
-            aux += "<td><input type='button' id='ex' value='Excluir' onclick='deletar("+produto.id+")''/></td></tr>"; 
+            aux += "<td><input type='button' id='ex' value='X' onclick='"+itensCarrinho+"=deletar("+produto.id+","+itensCarrinho+")'/></td></tr>"; 
           }
 
           $("#tabela").append(aux);
