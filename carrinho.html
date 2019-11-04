@@ -55,6 +55,7 @@
       console.log("   ", itensCarrinho);
 
       setCookie("carrinho", itensCarrinho);
+      window.location.reload();
     }
 
     // Para colocar o numero no carrinho
@@ -110,9 +111,10 @@
       height: 100%;
     }
     #footer {
-      position:inherit;
+      position: inherit;
       bottom: 0%;
       width: 100%;
+      display: block;
     }
 
     img {
@@ -123,36 +125,33 @@
 
 <body>
   <div id="head"></div>
-  <div>
-
-
-    <section id="cart_items">
-      <div class="container">
-
-        <div class="breadcrumbs">
-          <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">Carrinho</li>
-          </ol>
-        </div>
-
-        <div class="table-responsive cart_info">
-          <table class="table table-condensed" id="tabela">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Nome</th>
-                <th>Preço Unitário</th>
-                <th>Quantidade</th>
-                <th>Total</th>
-                <th></th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+  <section id="cart_items">
+  <div class="container">
+    
+      <div class="breadcrumbs">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">Carrinho</li>
+        </ol>
       </div>
-    </section>
+
+      <div class="table-responsive cart_info">
+        <table class="table table-condensed" id="tabela">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Nome</th>
+              <th>Preço Unitário</th>
+              <th>Quantidade</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    
   </div>
+</section>
 
   <div id="footer"></div>
 </body>
