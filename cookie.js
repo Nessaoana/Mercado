@@ -25,3 +25,20 @@ function getCookie(name) {
     return unescape(cookies.substring(begin + prefix.length, end));
 }
 
+function deletar(i, itens = []) {
+    var x;
+    var d; // recebe o indice q vai deletar 
+    console.log("deletar ", i);
+
+    
+    for( x=0;x<itensCarrinho.length; x++){
+      d = itens.indexOf(i);
+      if(d!= -1){
+        itens.splice(d, 1); 
+      }      
+    }
+    
+    console.log("itens ", itens);
+    return itens;
+    
+  }
