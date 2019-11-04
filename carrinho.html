@@ -43,6 +43,7 @@
 
     console.log(itensCarrinho);
 
+
     // Para colocar o numero no carrinho
     // pegar o tamanho do cookie e colocar lá do lado kkkkk
     // o que fazer?    
@@ -85,15 +86,13 @@
     // Para excluir:
     // Colocar um botão "x" no item do carrinho que tem o atributo id 
     // excluir de cookie de acordo com o id (fazer uma função...)
-    
+    // sintaxe para deletar
+    itensCarrinho = deletar("1", itensCarrinho);
 
 
 
     // Depois que faz todos os comentários acima envia novamente as informações para a index
-    if(cookie == null){
-      cookie ="";
-    }
-    setCookie("carrinho2", cookie );
+    setCookie("carrinho2", itensCarrinho);
 
     $(function () {
       $("#head").load("header.html");
