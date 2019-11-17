@@ -18,6 +18,15 @@
       carregaProdutos();
     });
 
+    function total() {
+      var soma = 0;
+      var precos = document.getElementsByClassName("preco");
+      for (var i = 0; i < precos.length; ++i) {
+        soma += parseFloat((precos[i].innerHTML).substring(3));
+      }
+      document.getElementById("tpagar").innerHTML = "R$ " + soma.toFixed(2);
+    }
+
     function process(quant, id) {
       var value = parseInt(document.getElementById(id).value);
       //Caso o Botão seja "-"
@@ -48,6 +57,7 @@
       }
 
       document.getElementById("precototal" + id).innerHTML = "R$ " + ((document.getElementById("precounit" + id).innerHTML).substring(2, 7) * document.getElementById(id).value).toFixed(2);
+      total();
     }
 
     // pegando a informação que foi enviada, fica guardada na variavel cookie
@@ -105,7 +115,7 @@
               aux += "<input type='button' id='minus' value='-' onclick='process(-1," + produto.id + ")'>";
               aux += "</div></td>";
               //Total
-              aux += "<td id='precototal" + produto.id + "'>R$ " + (pegaQnt(produto.id) * produto.preco).toFixed(2) + "</td>";
+              aux += "<td class ='preco' id='precototal" + produto.id + "'>R$ " + (pegaQnt(produto.id) * produto.preco).toFixed(2) + "</td>";
               //Excluir
               aux += "<td><input type='button' id='ex' value='X' onclick='deletarItem(" + produto.id + ")'/></td></tr></td><td></td></td>"
               //Inserindo em jaInseridos
@@ -114,6 +124,8 @@
             }
           });
         });
+        $("#tabela").append("<td></td> <td></td> <td></td> <td><h3><strong>TOTAL:</strong></h3></td> <td><h3 id='tpagar'></h3></td>");
+        total();
       });
     }
 

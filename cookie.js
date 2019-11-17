@@ -51,10 +51,6 @@ function deletar(i, itens = []) {
 function adicionar(id, itens, op) {
     console.log(itens);
     console.log(id);
-    if(op==1){
-        itens += id+",";
-    }else{
-        itens += id+",";
-    }    
+        itens.push(id);    
     return itens;
 }
