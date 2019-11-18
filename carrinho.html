@@ -32,8 +32,8 @@
       //Caso o Botão seja "-"
       if (quant == -1) {
         if (value > 1) {
-          for (var i = 0; i < cookie.length; ++i) {
-            if (cookie[i] == id) {
+          for (var i = 0; i < itensCarrinho.length; ++i) {
+            if (itensCarrinho[i] == id) {
               console.log("itensCarrinho antes: ", itensCarrinho);
               itensCarrinho.splice(i, 1);
               setCookie("carrinho", itensCarrinho);
@@ -47,16 +47,11 @@
       }
       //Caso o Botão seja "+"
       if (quant == 1) {
-        for (var i = 0; i < cookie.length; ++i) {
-          if (cookie[i] == id) {
-            itensCarrinho = adicionar(id, itensCarrinho, 2);
-            console.log(itensCarrinho);
-            setCookie("carrinho", itensCarrinho);
-            document.getElementById(id).value = value + 1;
-            window.location.reload();
-            break;
-          }
-        }
+        itensCarrinho = adicionar(id, itensCarrinho, 2);
+        console.log(itensCarrinho);
+        setCookie("carrinho", itensCarrinho);
+        document.getElementById(id).value = value + 1;
+        window.location.reload();
       }
 
       document.getElementById("precototal" + id).innerHTML = "R$ " + ((document.getElementById("precounit" + id).innerHTML).substring(2, 7) * document.getElementById(id).value).toFixed(2);
