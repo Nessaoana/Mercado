@@ -74,6 +74,7 @@ function adicionar(id, itens, op) {
     } else {
         itens += id + ",";
     }
+
     return itens;
 }
 
