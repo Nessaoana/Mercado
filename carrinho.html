@@ -39,6 +39,7 @@
               setCookie("carrinho", itensCarrinho);
               console.log("itensCarrinho depois: ", itensCarrinho);
               document.getElementById(id).value = value - 1;
+              window.location.reload();
               break;
             }
           }
@@ -48,9 +49,11 @@
       if (quant == 1) {
         for (var i = 0; i < cookie.length; ++i) {
           if (cookie[i] == id) {
-            itensCarrinho.push(id);
+            itensCarrinho = adicionar(id, itensCarrinho, 2);
+            console.log(itensCarrinho);
             setCookie("carrinho", itensCarrinho);
             document.getElementById(id).value = value + 1;
+            window.location.reload();
             break;
           }
         }
@@ -70,7 +73,7 @@
 
     // dando split para trabalhar com array de id
     if (cookie != null) {
-      itensCarrinho = tratarItem(cookie);
+      itensCarrinho = cookie.split(",");
     }
 
     console.log(itensCarrinho);
@@ -143,7 +146,7 @@
     // excluir de cookie de acordo com o id (fazer uma função...)
     // sintaxe para deletar
 
-    setCookie("carrinho2", itensCarrinho);
+    setCookie("carrinho", itensCarrinho);
     $(function () {
       $("#head").load("header.html");
       $("#footer").load("footer.html");

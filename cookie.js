@@ -47,23 +47,6 @@ function deletar(i, itens = []) {
 
 }
 
-function deleteOne(i, itens = []) {
-    var x;
-    var d; // recebe o indice q vai deletar 
-    console.log("////// deleteOne: ", i);
-
-
-    d = itens.indexOf(i);
-    console.log("index ", d);
-    if (d != -1) {
-        itens.splice(d, 1);
-    }
-
-    console.log("itens ", itens);
-    return itens;
-
-}
-
 
 // utilize a opção 1 quando for enviar os dados que vc pegou pelo getCookie
 function adicionar(id, itens, op) {
@@ -76,25 +59,4 @@ function adicionar(id, itens, op) {
     }
 
     return itens;
-}
-
-
-function tratarItem(itens) {
-    var listaCorrida;
-    listaCorrida = itens.split(",");
-
-    for (var i = 0; i <= listaCorrida.length; i++) {
-        console.log("i ", i);
-        for (var j = 0; j < listaCorrida.length; j++) {
-            if(listaCorrida[i].toString() == listaCorrida[j].toString()){
-                console.log("Repetido: ", listaCorrida[i].toString());
-                itensCarrinho = deleteOne(listaCorrida[j], itensCarrinho);
-            }
-            console.log("j ", j);
-
-        }
-    }
-
-    console.log(listaCorrida);
-    return listaCorrida;
 }
